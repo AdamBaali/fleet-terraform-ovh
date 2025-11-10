@@ -30,9 +30,28 @@ variable "key_pair_name" {
   type        = string
 }
 
-variable "domain" {
-  description = "Domain settings for the deployment"
+variable "domain_name" {
+  description = "The fully qualified domain name for Fleet (e.g., fleet.example.com)"
   type        = string
+}
+
+variable "use_ovh_dns" {
+  description = "Whether to use OVH DNS to create DNS records automatically"
+  type        = bool
+  default     = false
+}
+
+variable "domain_zone" {
+  description = "The OVH DNS zone (e.g., example.com) - required if use_ovh_dns is true"
+  type        = string
+  default     = ""
+}
+
+variable "fleet_license_key" {
+  description = "Fleet premium license key (optional, for premium features)"
+  type        = string
+  default     = ""
+  sensitive   = true
 }
 
 # Additional customization options can be added here
