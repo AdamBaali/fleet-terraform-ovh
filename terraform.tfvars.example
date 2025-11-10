@@ -1,0 +1,42 @@
+# OVH Public Cloud Project Configuration
+# Copy this file to terraform.tfvars and fill in your values
+
+# Your OVH Public Cloud project ID
+# You can find this in the OVH Public Cloud console
+project_id = "your-project-id-here"
+
+# Region to deploy Fleet
+# Common options: "GRA11", "SBG5", "BHS5", "DE1", "UK1", "WAW1"
+region = "GRA11"
+
+# Database password for MySQL
+# Use a strong password - this will be used by Fleet to connect to the database
+database_password = "your-secure-database-password-here"
+
+# Number of Fleet application instances to deploy
+# For production, use 2 or more for high availability
+fleet_instance_count = 2
+
+# Instance flavor for Fleet application servers
+# Common options: "s1-2" (1 vCore, 2GB), "s1-4" (1 vCore, 4GB), "s1-8" (1 vCore, 8GB)
+fleet_instance_flavor = "s1-4"
+
+# SSH key pair name for accessing instances
+# This should be a key pair you've already created in OVH
+key_pair_name = "your-ssh-key-name"
+
+# Domain name for Fleet
+# This should be the full domain where Fleet will be accessible
+domain_name = "fleet.example.com"
+
+# Use OVH DNS to automatically create DNS records
+# Set to true if you manage your domain's DNS with OVH
+use_ovh_dns = false
+
+# OVH DNS zone (only required if use_ovh_dns is true)
+# This is typically your root domain (e.g., "example.com")
+domain_zone = "example.com"
+
+# Fleet Premium License Key (optional)
+# Only needed if you have Fleet Premium features
+# fleet_license_key = "your-fleet-license-key-here"

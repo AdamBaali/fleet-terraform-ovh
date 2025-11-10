@@ -6,7 +6,7 @@ terraform {
       version = "~> 0.45.0"
     }
     openstack = {
-      source  = "openstack/openstack"
+      source  = "terraform-provider-openstack/openstack"
       version = "~> 1.54.0"
     }
   }
